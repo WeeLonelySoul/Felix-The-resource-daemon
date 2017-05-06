@@ -44,3 +44,6 @@ If you find a but, please report it to nicholas.rosqvist.nunes@gmail.com with th
 * Linux (Ubuntu, but installing libnotify and all the dependencies should make it work on other linux systems)
 * Mac (The one that is being developed for linux might work, just make sure to have libnotify and the other dependencies installed)
 * Windows (Might come in the future)
+
+# Known issues
+* When installing, either use sudo and move the Felix folder to `/usr/bin/` or use `chown currentuser:currentuser /usr/bin` (Gonna fix this in a future update) <br />
