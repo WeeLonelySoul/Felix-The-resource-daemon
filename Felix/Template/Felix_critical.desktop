@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=python /usr/bin/Felix/Felix_critical.py
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=python-1.desktop
+Name=Felix - Critical
+Comment[en_US]=Felix - Critical
+Comment=Felix - Critical

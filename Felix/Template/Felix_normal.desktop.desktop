@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=python /usr/bin/Felix/Felix2.0.py
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Felix_normal.desktop
+Name=Felix - Normal
+Comment[en_US]=Felix - Normal
+Comment=Felix - Normal

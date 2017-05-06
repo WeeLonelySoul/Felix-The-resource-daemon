@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Felix: The resource deamon
+Comment=Don't touch me, BAKA!
+Exec=python /usr/bin/Felix/Felix2.0.py
+Icon=/home/nicholas/Pictures/innocent_cat_pic.png
+Categories=System;Settings;
