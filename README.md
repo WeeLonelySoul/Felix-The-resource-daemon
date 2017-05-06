@@ -38,5 +38,9 @@ the file "setup.py" can also remove Felix if that's what the user wants to do, j
 
 # Bug report
 
-If you find a but, please report it to nicholas.rosqvist.nunes@gmail.com with the subject "[Bug Report]" or use the bug report feature that Felix contains. Just click on his face and select "Bug Report".<br />
-You cold also report a bug here on github, but expect me to recieve it faster if you use mail.
+If you find a but, please report it to nicholas.rosqvist.nunes@gmail.com with the subject "[Bug Report]" or use the bug report feature here on github.
+
+# Available platforms
+* Linux (Ubuntu, but installing libnotify and all the dependencies should make it work on other linux systems)
+* Mac (The one that is being developed for linux might work, just make sure to have libnotify and the other dependencies installed)
+* Windows (Might come in the future)
