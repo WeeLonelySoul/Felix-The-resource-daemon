@@ -1,7 +1,8 @@
 # Felix-The-resource-daemon
 
-Will soon contain a resource "daemon", written in python.
-Still a work in progress, but I can atleast push out a beta version.
+Felix beta version is now out!<br />
+Download the Felix folder and run the `setup.py` to install him!<br />
+There is a known issue, so before installing scroll down to the bottom of this page and read it<br />
 
 
 # Backstory to the creation of Felix
