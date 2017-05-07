@@ -14,6 +14,7 @@ def install():
 
     ### Depend install
     #os.system("sudo -H pip install appindincator")
+    os.system("sudo apt install python-pip")
     os.system("sudo -H pip install uptime")
     os.system("sudo -H pip install psutil")
     os.system("sudo apt install -y python-gobject")
