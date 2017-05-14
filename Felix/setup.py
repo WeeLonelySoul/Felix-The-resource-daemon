@@ -6,15 +6,16 @@ import getopt
 
 user = getpass.getuser() # Get the current user
 error_holder = []
-### Run with sudo
 
+if os.geteuid() == 0:
+    sys.exit("Don't run the script with sudo. I'll ask  your for it when it's needed")
 
 def install():
     """ Install option """
 
     ### Depend install
     #os.system("sudo -H pip install appindincator")
-    os.system("sudo apt install python-pip")
+    os.system("sudo apt install -y python-pip")
     os.system("sudo -H pip install uptime")
     os.system("sudo -H pip install psutil")
     os.system("sudo apt install -y python-gobject")
@@ -44,6 +45,8 @@ def install():
                     print ("Success, Felix will autorun once you reboot your computer.")
 
             else:
+                os.system("mkdir /home/%s/.config/autostart" % user)
+                location = "/home/%s/Downloads/" % user
                 typical_bug_check = os.path.exists("%s/Felix/Template/Felix_normal.desktop.desktop" % location)
                 os.system("cp -R /home/%s/Downloads/Felix/ /usr/bin/ " % user)
                 if typical_bug_check == True:
@@ -90,36 +93,37 @@ def remove():
         error_holder.append(error)
 
 
-        if exist != False:
-            try:
-                os.system("rm -r /usr/bin/Felix/")
-            except Exception as error:
-                error_holder.append(error)
+    if exist != False:
+        try:
+            os.system("rm -r /usr/bin/Felix/")
+        except Exception as error:
+            error_holder.append(error)
 
-        if exist2 != False:
-            try:
-                os.system("rm /home/%s/.config/autostart/Felix.desktop" % user)
-            except Exception as error:
-                error_holder.append(error)
+    if exist2 != False:
+        try:
+            os.system("rm /home/%s/.config/autostart/Felix.desktop" % user)
+        except Exception as error:
+            error_holder.append(error)
 
-        if exist3 != False:
-            try:
-                os.system("rm /home/%s/.config/autostart/Felix_critical.desktop" % user)
-            except Exception as error:
-                error_holder.append(error)
-        if len(error_holder) > 0:
-            os.system("clear")
-            print("An error has occured [%s]" % error)
-            sys.exit()
-        else:
-            os.system("clear")
-            print("Felix has now been removed")
-            sys.exit()
+    if exist3 != False:
+        try:
+            os.system("rm /home/%s/.config/autostart/Felix_critical.desktop" % user)
+        except Exception as error:
+            error_holder.append(error)
+
+    if len(error_holder) > 0:
+        os.system("clear")
+        print("An error has occured [%s]" % error)
+        sys.exit()
+    else:
+        os.system("clear")
+        print("Felix has now been removed")
+        sys.exit()
 
 def main(argv):
     """ Main loop """
     try:
-        opts, args = getopt.getopt(argv, "ihr:", [""])
+        opts, args = getopt.getopt(argv, "ihr", [""])
     except getopt.GetoptError as error:
         print("An error has occurred [%s]" % error)
     for opt, arg in opts:
@@ -127,7 +131,7 @@ def main(argv):
             Help()
         elif opt  in ("-i"):
             install()
-        elif opt == "-r":
+        elif opt in ("-r"):
             remove()
         else:
             Help()
