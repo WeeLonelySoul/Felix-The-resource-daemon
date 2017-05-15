@@ -34,20 +34,20 @@ current_version = 2
 
 ### Check if it's the first boot Start ###
 
-if check_config_file != True: # Will only be false once, if everything works correctly. Which I doubt tbh ~_~
+#if check_config_file != True: # Will only be false once, if everything works correctly. Which I doubt tbh ~_~
     # Display gtk window, asking for email credintials if the user wants it, and other totally cool questions
-    win = gtk.Window()
-    win.connect("delete-event", gtk.main_quit)
-    win.show_all()
-    gtk.main()
-    move_file = os.system("cp ./Template/felix_config.py %s" % config_path) # And finally copy it to it's location
-    from felix_config import *
-    mail_user = "mail_user"
-    mail_password = "mail_password"
-else:
-    from felix_config import *
-    mail_user = "mail_user"
-    mail_password = "mail_password"
+#    win = gtk.Window()
+#    win.connect("delete-event", gtk.main_quit)
+#    win.show_all()
+#    gtk.main()
+#    move_file = os.system("cp ./Template/felix_config.py %s" % config_path) # And finally copy it to it's location
+#    from felix_config import *
+#    mail_user = "mail_user"
+#    mail_password = "mail_password"
+#else:
+#    from felix_config import *
+#    mail_user = "mail_user"
+#    mail_password = "mail_password"
 ### Check if it's the first boot Stop ###
 
 ### Loading config info Start ###
