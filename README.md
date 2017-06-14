@@ -1,8 +1,12 @@
 # Felix-The-resource-daemon
 
-Felix beta version is now out!<br />
-Download the Felix folder and run the `setup.py` to install him!<br />
-There is a known issue, so before installing scroll down to the bottom of this page and read it<br />
+Felix The Bandwidth update is now out!<br />
+Download the new `Felix2.0` from the felix folder now!!<br />
+The bandwidth update adds a couple more features, all of them are bandwidth releated<br />
+Also removing a couple of things, that are not necessary anymore or just doesn't fit the theme that I want Felix to go towards.</br>
+
+## Important Update!
+* Disabling the `Update feature` for now, doesn't seem to be ready for a use yet.
 
 
 # Backstory to the creation of Felix
@@ -30,7 +34,7 @@ the file "setup.py" can also remove Felix if that's what the user wants to do, j
 
 # Future updates
 * Mail check
-* Bandwidth inform
+* Bandwidth inform <-- Implanted in the Bandwidth update
 * GUI update
 * Settings for what Felix should look at
 * Merge critical and normal
@@ -44,7 +48,7 @@ If you find a but, please report it to nicholas.rosqvist.nunes@gmail.com with th
 # Available platforms
 * Linux (Ubuntu, but installing libnotify and all the dependencies should make it work on other linux systems)
 * Mac (The one that is being developed for linux might work, just make sure to have libnotify and the other dependencies installed)
-* Windows (Might come in the future)
+* Windows (Canceled)
 
 # Known issues
 * When installing, either use sudo and move the Felix folder to `/usr/bin/` or use `chown currentuser:currentuser /usr/bin` (Gonna fix this in a future update) <br />
