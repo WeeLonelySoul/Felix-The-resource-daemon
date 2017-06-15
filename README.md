@@ -34,7 +34,7 @@ the file "setup.py" can also remove Felix if that's what the user wants to do, j
 
 # Future updates
 * Mail check
-* Bandwidth inform <-- Implanted in the Bandwidth update
+* Bandwidth inform <-- Implemented in the Bandwidth update
 * GUI update
 * Settings for what Felix should look at
 * Merge critical and normal
