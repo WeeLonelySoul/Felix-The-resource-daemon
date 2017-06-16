@@ -8,7 +8,7 @@ import imaplib
 import getpass
 from uptime import uptime #
 import webbrowser
-import psutil# 
+import psutil#
 import gi#
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk as gtk
@@ -23,70 +23,65 @@ avatar = "/usr/bin/Felix/Pictures/innocent_cat_pic.png"
 check_file = os.path.exists("/usr/bin/Felix/Pictures/innocent_cat_pic.png")
 config_path = "/usr/lib/python2.7/"
 check_config_file = os.path.exists("/usr/lib/python2.7/felix_config.py")
-creator_email = "nicholas.rosqvist.nunes@gmail.com"
 check_autostart_1 = os.path.exists("/home/%s/.config/autostart/" % user)
 github_link = "https://raw.githubusercontent.com/WeeLonelySoul/Felix-The-resource-daemon/master/current_version/current_version"
-current_version = 3
+current_version = 4
 ### Variable Stop ###
 
 #if check_file != True:
     #download = os.system("cd /home/%s/Pictures/ &&  wget http://louos.xyz/weeb/pictures/innocent_cat_pic.png" % user)
-
-### Check if it's the first boot Start ###
-
-#if check_config_file != True: # Will only be false once, if everything works correctly. Which I doubt tbh ~_~
-    # Display gtk window, asking for email credintials if the user wants it, and other totally cool questions
-#    win = gtk.Window()
-#    win.connect("delete-event", gtk.main_quit)
-#    win.show_all()
-#    gtk.main()
-#    move_file = os.system("cp ./Template/felix_config.py %s" % config_path) # And finally copy it to it's location
-#    from felix_config import *
-#    mail_user = "mail_user"
-#    mail_password = "mail_password"
-#else:
-#    from felix_config import *
-#    mail_user = "mail_user"
-#    mail_password = "mail_password"
-### Check if it's the first boot Stop ###
 
 ### Loading config info Start ###
 
 ### Loading config info Stop ###
 
 ### Update Start ###
-#update = os.path.exists("/tmp/current_version")
-#if update == True:
-#    os.system("rm /tmp/current_version")
-#os.system("cd /tmp/ && wget -q %s 2>&1 >/dev/null" % github_link)
-#with open("/tmp/current_version") as cv:
-#    current = cv.readline()
-#    if int(current) > current_version:
-#
-#        class Update(gtk.Window):
-#            def __init__(self):
-#                gtk.Window.__init__(self, title="An Update is available")
-#                self.box = gtk.Box(spacing=6)
-#                self.add(self.box)
-#
-#                self.button_goto = gtk.Button(label="Download now")
-#                self.button_goto.connect("clicked", self.goto)
-#                self.box.pack_start(self.button_goto, True, True, 0)
-#
-#                self.button_ignore = gtk.Button(label="Ignore for now")
-#                self.button_ignore.connect("clicked", self.ignore)
-#                self.box.pack_start(self.button_ignore, True, True, 0)
-#
-#            def goto(self, widget):
-#                webbrowser.open_new_tab("https://github.com/WeeLonelySoul/Felix-The-resource-daemon")
-#            def ignore(self, widget):
-#                gtk.Window.destroy(win)
-#                gtk.main_quit()
-#
-#        win = Update()
-#        win.connect("delete-event", gtk.main_quit)
-#        win.show_all()
-#        gtk.main()
+update = os.path.exists("/tmp/current_version")
+if update == True:
+    os.system("rm /tmp/current_version")
+os.system("cd /tmp/ && wget -q %s 2>&1 >/dev/null" % github_link)
+with open("/tmp/current_version") as cv:
+    current = cv.readline()
+    if int(current) > current_version:
+        class Update(gtk.Window):
+            def __init__(self):
+                gtk.Window.__init__(self, title="New update!")
+
+                hbox = gtk.Box(spacing=10)
+                hbox.set_homogeneous(False)
+                vbox_left = gtk.Box(orientation=gtk.Orientation.VERTICAL, spacing=10)
+                vbox_left.set_homogeneous(False)
+                vbox_right = gtk.Box(orientation=gtk.Orientation.VERTICAL, spacing=10)
+                vbox_right.set_homogeneous(False)
+
+                hbox.pack_start(vbox_left, True, True, 0)
+                hbox.pack_start(vbox_right, True, True, 0)
+
+                label = gtk.Label("There is a new update avaliable online!")
+                vbox_left.pack_start(label, True, True, 0)
+
+                button = gtk.Button(label="Download the new update")
+                label.set_mnemonic_widget(button)
+                button.connect("clicked", self.goto)
+                vbox_left.pack_start(button, True, True, 0)
+
+                button = gtk.Button(label="Ignore for now")
+                label.set_mnemonic_widget(button)
+                button.connect("clicked", self.ignore)
+                vbox_left.pack_start(button, True, True, 0)
+                self.add(hbox)
+
+            def goto(self, widget):
+                webbrowser.open_new_tab("https://github.com/WeeLonelySoul/Felix-The-resource-daemon")
+
+            def ignore(self, widget):
+                gtk.Window.destroy(window)
+                gtk.main_quit()
+
+        window = Update()
+        window.connect("delete-event", gtk.main_quit)
+        window.show_all()
+        gtk.main()
 ### Update Stop ###
 
 ### Functions  Start ###
@@ -115,32 +110,24 @@ def build_menu():
     item_br = gtk.MenuItem("Network Info: Bytes recv")
     item_br.connect("activate", network_bandwith_bytes_recv)
 
-    item_ps = gtk.MenuItem("Network Info: Packets sent")
-    item_ps.connect("activate", network_bandwith_packets_sent)
+    item_titel = gtk.MenuItem("Felix")
+    item_titel.connect("activate", titel)
 
-    item_pr = gtk.MenuItem("Network Info: Packets recv")
-    item_pr.connect("activate", network_bandwith_packets_recv)
-
-    item_ei = gtk.MenuItem("Network Info: Error in")
-    item_ei.connect("activate", network_bandwith_errin)
-
-    item_eo = gtk.MenuItem("Network Info: Error out")
-    item_eo.connect("activate", network_bandwith_errout)
+    item_update = gtk.MenuItem("Check for updates")
+    item_update.connect("activate", check_for_updates_force)
 
     item_creator = gtk.MenuItem("Who is my creator?")
     item_creator.connect("activate", creator)
 
     # Everything added to the drop down menu must be append!
+    menu.append(item_titel)
     menu.append(item_cpu)
     menu.append(item_ram)
     menu.append(item_network)
     menu.append(item_bs)
     menu.append(item_br)
-    menu.append(item_ps)
-    menu.append(item_pr)
-    menu.append(item_ei)
-    menu.append(item_eo)
     menu.append(item_creator)
+    menu.append(item_update)
     menu.append(item_quit)
     menu.show_all()
     return menu
@@ -193,30 +180,26 @@ def network_bandwith_bytes_recv(source):
     current_throughput = psutil.net_io_counters().bytes_recv
     os.system("notify-send --urgency=critical  -i '%s' -a '%s' 'Amount of bytes recv' '%s'" % (avatar, APPINDICATOR_ID, current_throughput))
 
-def network_bandwith_packets_sent(source):
-    """ Function so that you can check your current throughput """
-    current_throughput = psutil.net_io_counters().packets_sent
-    os.system("notify-send --urgency=critical  -i '%s' -a '%s' 'Amount of packets sent' '%s'" % (avatar, APPINDICATOR_ID, current_throughput))
-
-def network_bandwith_packets_recv(source):
-    """ Function so that you can check your current throughput """
-    current_throughput = psutil.net_io_counters().packets_recv
-    os.system("notify-send --urgency=critical  -i '%s' -a '%s' 'Amount of packets recv' '%s'" % (avatar, APPINDICATOR_ID, current_throughput))
-
-def network_bandwith_errin(source):
-    """ Function so that you can check your current throughput """
-    current_throughput = psutil.net_io_counters().errin
-    os.system("notify-send --urgency=critical  -i '%s' -a '%s' 'Amount of errors while receivng' '%s'" % (avatar, APPINDICATOR_ID, current_throughput))
-
-def network_bandwith_errout(source):
-    """ Function so that you can check your current throughput """
-    current_throughput = psutil.net_io_counters().errout
-    os.system("notify-send --urgency=critical  -i '%s' -a '%s' 'Amount of errors while sending' '%s'" % (avatar, APPINDICATOR_ID, current_throughput))
-
 def creator(source):
     """ Displays who's the creator of Felix """
     message = "I was created by Nicholas R.Nunes in the year 2017 in Sweden"
     os.system("notify-send --urgency=critical  -i '%s' -a '%s' 'Creation info' '%s'" % (avatar, APPINDICATOR_ID, message))
+
+def titel(source):
+    """  """
+    os.system("notify-send --urgency=critical  -i '%s' -a '%s' 'Current version' 'The latest version of Felix is %s'" % (avatar, APPINDICATOR_ID, current_version))
+
+def check_for_updates_force(source):
+    """ Checks for updates """
+    if update == True:
+        os.system("rm /tmp/current_version")
+        os.system("cd /tmp/ && wget -q %s 2>&1 >/dev/null" % github_link)
+    with open("/tmp/current_version") as cv:
+        current = cv.readline()
+    if int(current) > current_version:
+        os.system("notify-send --urgency=critical  -i '%s' -a '%s' 'Update available!' 'There is a new version available online!'" % (avatar, APPINDICATOR_ID))
+    else:
+        os.system("notify-send --urgency=critical  -i '%s' -a '%s' 'No updates available' 'You have the latest version available'" % (avatar, APPINDICATOR_ID))
 ### Functions Stop ###
 
 ### Main loop Start ###
