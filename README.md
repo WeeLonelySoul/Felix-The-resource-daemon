@@ -6,7 +6,6 @@ The bandwidth update adds a couple more features, all of them are bandwidth rele
 Also removing a couple of things, that are not necessary anymore or just doesn't fit the theme that I want Felix to go towards.</br>
 
 ## Important Update!
-* Disabling the `Update feature` for now, doesn't seem to be ready for a use yet.
 
 
 # Backstory to the creation of Felix
