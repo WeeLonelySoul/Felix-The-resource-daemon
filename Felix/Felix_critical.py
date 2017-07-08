@@ -17,7 +17,6 @@ Do not touch me, baka!
 """
 ### Variable Start ###
 user = getpass.getuser()
-moist = "Google Chrome"
 APPINDICATOR_ID = "Felix_2.0"
 avatar = "/usr/bin/Felix/Pictures/innocent_cat_pic.png"
 ### Variable Stop ###
@@ -29,7 +28,7 @@ def cpu_count():
         if cpu == 70 and online > 300:
             alert = os.system("notify-send --urgency=critical  -i '%s' -a '%s' 'CPU' 'The cpu is reaching critical levels [%s]'" % (avatar, APPINDICATOR_ID, cpu))
         elif cpu > 80 and online > 300:
-            alert = os.system("notify-send --urgency=critical  -i '%s' -a '%s' 'CPU' 'The cpu is in a critical level [%s]\nRecommended action, turn off [%s]' " % (avatar, APPINDICATOR_ID, cpu, moist))
+            alert = os.system("notify-send --urgency=critical  -i '%s' -a '%s' 'CPU' 'The cpu is in a critical level [%s]' " % (avatar, APPINDICATOR_ID, cpu))
 
 
 def ram():
@@ -37,7 +36,7 @@ def ram():
         online = uptime()
         ram = psutil.virtual_memory().percent
         if ram == 100 and online > 300:
-            alert = os.system("notify-send --urgency=critical  -i '%s' -a '%s' 'RAM' 'RAM is almost full [%s]\nRecommended action, turn off [%s]' " % (avatar, APPINDICATOR_ID, ram, moist))
+            alert = os.system("notify-send --urgency=critical  -i '%s' -a '%s' 'RAM' 'RAM is almost full [%s]' " % (avatar, APPINDICATOR_ID, ram))
 
 def network():
     """ Check the network """
@@ -49,15 +48,7 @@ def network():
         #log_copy = os.system("cp /var/log/syslog /home/nicholas/Documents/") #Use for debug only
 
 
-def mail(mail_user, mail_password, Mail):
-        """ Work in progressive """
-        Mail = imaplib.IMAP4_SSL('imap.gmail.com', '993')
-        Mail.select()
-        Mail.unRead = Mail.search(None, 'UnSeen')
-        Amount = len(Mail.unRead[1][0].split())
-        if Amount > 0:
-            alert = os.system("notify-send --urgency=critical -i '%s' -a '%s' 'You just got a new email'" % (avatar, APPINDICATOR_ID))
-        time.sleep(360)
+
     
 while True:
     cpu_count()
