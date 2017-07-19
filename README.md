@@ -51,3 +51,4 @@ If you find a but, please report it to nicholas.rosqvist.nunes@gmail.com with th
 
 # Known issues
 * When installing, either use sudo and move the Felix folder to `/usr/bin/` or use `chown currentuser:currentuser /usr/bin` (Gonna fix this in a future update) <br />
+* Doesn't work properly on Ubuntu 17.04 <br />
