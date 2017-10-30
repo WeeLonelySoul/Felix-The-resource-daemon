@@ -1,21 +1,25 @@
-# Felix-The-resource-daemon
+# Felix (The resource daemon)
 
-Felix The Bandwidth update is now out!<br />
-Download the new `Felix2.0` from the felix folder now!!<br />
-The bandwidth update adds a couple more features, all of them are bandwidth releated<br />
-Also removing a couple of things, that are not necessary anymore or just doesn't fit the theme that I want Felix to go towards.</br>
 
-## Important Update!
+## Important Update! (2017/10/30)
 
+Felix is receiving a rewrite that will be relased later this year or early next year.
+
+The reason for this is that I didn't like how the code looked/structured. There was also a 'couple' of what I would call noobie misstakes in the code. The new version is knows as <i>Generation 3</i>, and will be the last time official update that Felix gets. As I'm after this project will update/finish [MGS](https://github.com/WeeLonelySoul/louOS-Management-System)
+
+I will of course release patch fixes, if there is any bugs to squash but otherwise consider this project <b>done</b>.
+
+The install process will also be updated, as I'm no longer using Ubuntu but rather using Arch on my machine.
 
 # Backstory to the creation of Felix
 
 So why did I create Felix?
-Well the computer that I'm currently using is getting pretty old by now. So the CPU sometimes goes up to a 100% or 
-the network cards just feels like dying. 
-So that's why I made Felix, to inform me when the network is down, or I'm running out of RAM.
+Well the computer that I was using back then was getting pretty old. So the CPU was going up to a 100% and
+the network cards just feels like dying from time to time. 
+So that's why I made Felix, to inform me when the network is down, if I'm running out of RAM or if the CPU is getting clogged.
 
-He's pretty much like a couple of other resource daemons or monitors out there. But for me it was important that I had created it and hey sharing is caring.
+He's pretty much like a other resource daemons, or monitors out there.<br>
+But for me it was important that I had created it and hey, sharing is caring.
 
 # Installation
 
@@ -32,9 +36,9 @@ This is the installation location for Felix.
 the file "setup.py" can also remove Felix if that's what the user wants to do, just run the file like this <br />`python setup.py remove`
 
 # Future updates
-* Mail check
+~~* Mail check ~~
 * Bandwidth inform <-- Implemented in the Bandwidth update
-* GUI update
+~~* GUI update~~
 * Settings for what Felix should look at
 * Merge critical and normal
 
@@ -42,7 +46,7 @@ the file "setup.py" can also remove Felix if that's what the user wants to do, j
 
 # Bug report
 
-If you find a but, please report it to nicholas.rosqvist.nunes@gmail.com with the subject "[Bug Report] Felix" so that I know that the bug is releated to Felix and not something else, but you could also use the bug report feature here on github.
+If you find a bug, please report it to nicholas.rosqvist.nunes@gmail.com with the subject "[Bug Report] Felix" so that I know that the bug is releated to Felix and not something else, but you could also use the bug report feature here on github.
 
 # Available platforms
 * Linux (Ubuntu, but installing libnotify and all the dependencies should make it work on other linux systems)
