@@ -36,8 +36,8 @@ This is the installation location for Felix.
 the file "setup.py" can also remove Felix if that's what the user wants to do, just run the file like this <br />`python setup.py remove`
 
 # Future updates
-~~* Mail check ~~
-* Bandwidth inform <-- Implemented in the Bandwidth update
+~~* Mail check~~<br>
+* Bandwidth inform <-- Implemented in the Bandwidth update<br>
 ~~* GUI update~~
 * Settings for what Felix should look at
 * Merge critical and normal
