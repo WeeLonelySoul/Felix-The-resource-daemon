@@ -32,6 +32,7 @@ To use the new version of Felix (also known as gen3) install the following depen
 
 * gi
 * requests
+* psutil
 
 Both dependencies can be installed with pip, the command is `sudo pip install "Dependency"`
 
