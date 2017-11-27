@@ -30,11 +30,12 @@ But for me it was important that I had created it, and hey sharing is caring.
 ## If you're using the gen3 version of Felix, follow this guide
 To use the new version of Felix (also known as gen3) install the following dependencies
 
+* python-gobject
 * gi
 * requests
 * psutil
 
-Both dependencies can be installed with pip, the command is `sudo pip install "Dependency"`
+The dependencies gi, requests and psutil can be installed with pip, the command is `sudo pip install "Dependency"` while python-gobject can be installed through your package-manager
 
 ## If you're using the gen2 version of Felix, follow this guide
 #### The setup file is made for Ubuntu/Debian
