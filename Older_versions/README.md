@@ -1,4 +1,4 @@
-This folders only purpose is to house older version of Felix. Much will change, things will be added and removed.
-So instead of forcing people to use the current version, they can find older versions of Felix and use whatever they want to
+This is were you can find older versions of Felix. But I wouldn't recommend these as they are
 
-// Nicholas
+1) Not supported anymore
+2) Contains cringe weeb comments from a younger version of me
