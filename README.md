@@ -1,9 +1,8 @@
 # Felix (The resource daemon)
 
-The new version of Felix is a lot more portable compared to the last version (gen2), this means that you can place the folder <b>Felix</b> anywhere on your system! And well you're gonna have to make the autostart part yourself as I can't provide it to you. But! I recommend that you create a <b>.desktop</b> file and place it in the following directory `/home/$USER/.config/autostart/`
+### The new version of Felix, known as generation 3 is now released!! Grab your copy while it's still hot!!
 
-### Update!
-The new version of Felix is pretty much done, I'm therefore currently looking through the code to see if there are anything to change. <b>Expect the new version of Felix to be released later this week</b>
+The new version of Felix is a lot more portable compared to the last version (gen2), this means that you can place the folder <b>Felix</b> anywhere on your system! And well you're gonna have to make the autostart part yourself as I can't provide it to you. But! I recommend that you create a <b>.desktop</b> file and place it in the following directory `/home/$USER/.config/autostart/`
 
 
 ## Important Update! (2017/10/30)
