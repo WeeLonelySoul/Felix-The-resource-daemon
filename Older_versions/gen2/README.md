@@ -1,1 +1,1 @@
-This is the directory for Felix gen2
+This is the directory for Felix generation 2 (gen2)
