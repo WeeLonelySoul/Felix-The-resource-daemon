@@ -2,16 +2,7 @@
 
 ### The new version of Felix, known as generation 3 is now released!! Grab your copy while it's still hot!!
 
-The new version of Felix is a lot more portable compared to the last version (gen2), this means that you can place the folder <b>Felix</b> anywhere on your system! And well you're gonna have to make the autostart part yourself as I can't provide it to you. But! I recommend that you create a <b>.desktop</b> file and place it in the following directory `/home/$USER/.config/autostart/`
-
-
-## Important Update! (2017/10/30)
-
-Felix is receiving a rewrite that will be relased later this year or early next year.
-
-The reason for this is that I didn't like how the code looked/structured. There was also a 'couple' of what I would call noobie misstakes in the code. The new version is knows as <i>Generation 3</i>, and will be the last time official update that Felix gets. As I'm after this project will update/finish [MGS](https://github.com/WeeLonelySoul/louOS-Management-System)
-
-I will of course release patch fixes, if there is any bugs to squash but otherwise consider this project <b>done</b>.
+The new version of Felix is a lot more portable compared to the last version (gen2), this means that you can place the folder <b>Felix</b> anywhere on your system! And if you want it autostarted on boot, you're gonna have to make that part yourself as I can't provide it to you. But! I recommend that you create a <b>.desktop</b> file and place it in the following directory `/home/$USER/.config/autostart/` as it's the simplest option I know.
 
 # Backstory to the creation of Felix
 
