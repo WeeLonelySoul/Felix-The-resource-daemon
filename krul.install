@@ -1,4 +1,3 @@
 @name = Felix
 @author = WeeLonelySoul
 @install_loc = /usr/bin/
-@create_dekstop = "True"
