@@ -23,5 +23,6 @@ To use the new version of Felix (also known as gen3) install the following depen
 * gi
 * requests
 * psutil
+* uptime
 
 The dependencies gi, requests and psutil can be installed with pip, the command is `sudo pip install "Dependency"` while python-gobject and libappindicator-gtk3 can be installed through your package-manager
